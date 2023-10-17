@@ -61,11 +61,11 @@ ORDER BY actors DESC;
 
 
 -- Question 8 - From store_id 1, how many customers have a last name ending with ‘es’? (use customer table)
-SELECT COUNT(last_name)  
+SELECT COUNT(*)  
 FROM customer
-WHERE last_name LIKE '%es';
+WHERE store_id = 1 AND last_name LIKE '%es';
 
--- Answer: 21
+-- Answer: 13
 
 
 -- Question 9 - How many payment amounts (4.99, 5.99, etc.) had a number of rentals above 250 for customers
@@ -85,4 +85,4 @@ SELECT rating, COUNT(DISTINCT rating) AS rating_categories, COUNT(title)
 FROM film
 GROUP BY rating;
 
--- Answer: PG-13 with 223 movies
+-- Answer: 5 categories, PG-13 with 223 movies
